@@ -59,6 +59,7 @@ public class Ball : MonoBehaviour
 
         isTrown = false;
         hitTarget = false;
+        audioSource.volume = 1f;
     }
 
     void OnCollisionEnter(Collision other)
@@ -76,6 +77,7 @@ public class Ball : MonoBehaviour
         if (!other.gameObject.CompareTag("BowlArea")) return;
 
         hitTarget = true;
+        audioSource.volume = 0.05f;
         audioSource.PlayOneShot(ballScoreSound);
         StartCoroutine(ResetBallTimer(3f));
     }
