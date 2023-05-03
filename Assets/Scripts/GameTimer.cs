@@ -15,6 +15,7 @@ public class GameTimer : MonoBehaviour
 
     void Start() {
         instance = this;
+        StartGame();
     }
 
     public void StartGame() {

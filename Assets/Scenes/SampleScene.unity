@@ -1414,7 +1414,7 @@ GameObject:
   - component: {fileID: 1015689536}
   - component: {fileID: 1015689535}
   m_Layer: 0
-  m_Name: RightHand Controller
+  m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
