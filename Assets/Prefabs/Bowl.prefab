@@ -192,7 +192,7 @@ Transform:
   - {fileID: 8740972791284431002}
   - {fileID: 7537350449781395014}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8537470597018403862
 MonoBehaviour:
@@ -207,6 +207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 7535106442116903798}
+  fishPrefabs:
+  - {fileID: 6917151367586370292, guid: e482fdd3756e9a649980d96cc48fb935, type: 3}
+  - {fileID: 7230744313455155294, guid: 7bd22e3ebde18dd408f2ac948144d13a, type: 3}
+  - {fileID: 9141795453156865977, guid: dc97b1d68c079a14fa6885e7d100ae96, type: 3}
+  - {fileID: 3110131519394417785, guid: ec2102c906833a641bc75cc820d57733, type: 3}
   Selected: 0
 --- !u!1001 &7535921815481593428
 PrefabInstance:

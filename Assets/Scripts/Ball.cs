@@ -59,26 +59,37 @@ public class Ball : MonoBehaviour
 
         isTrown = false;
         hitTarget = false;
-        audioSource.volume = 1f;
+
+        StopAllCoroutines();
     }
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collision");
-
-        Debug.Log(other.gameObject.name);
+        // Debug.Log("Collision");
+        // Debug.Log(other.gameObject.name);
 
         audioSource.PlayOneShot(ballHitSound);
         StartCoroutine(ResetBallTimer(3f));
     }
 
     void OnTriggerEnter(Collider other) {
-        Debug.Log("Trigger" + other.gameObject.tag);
-        if (!other.gameObject.CompareTag("BowlArea")) return;
+        if (!other.gameObject.CompareTag("BowlArea") || hitTarget) return;
+
+        Bowl bowl = other.gameObject.transform.parent.GetComponent<Bowl>();
+
+        if (bowl?.Selected == true) {
+            audioSource.PlayOneShot(ballScoreSound, 0.75f);
+            GameTimer.instance.AddSeconds(15);
+
+            bowl.Selected = false;
+        } else {
+            GameTimer.instance.AddSeconds(5);
+        }
+
+        bowl?.CatchFish();
 
         hitTarget = true;
-        audioSource.volume = 0.05f;
-        audioSource.PlayOneShot(ballScoreSound);
+        audioSource.PlayOneShot(ballScoreSound, 0.25f);
         StartCoroutine(ResetBallTimer(3f));
     }
 }
