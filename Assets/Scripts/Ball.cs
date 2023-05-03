@@ -82,6 +82,8 @@ public class Ball : MonoBehaviour
             GameTimer.instance.AddSeconds(15);
 
             bowl.Selected = false;
+        } else if (bowl?.fishCaught == true) {
+            GameTimer.instance.AddSeconds(2);
         } else {
             GameTimer.instance.AddSeconds(5);
         }

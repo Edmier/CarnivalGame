@@ -14,7 +14,7 @@ public class Bowl : MonoBehaviour
     private float offset = 0;
     private float fishOffset = 0;
     private float fishSpeed = 0.5f;
-    private bool fishCaught = false;
+    public bool fishCaught = false;
 
     // Start is called before the first frame update
     void Start() {
