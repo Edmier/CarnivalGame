@@ -11,14 +11,25 @@ public class GameTimer : MonoBehaviour
     public static float TimeRemaining = 90f;
     public static GameTimer instance;
     public static bool IsRunning = false;
+
+    private bool firstRun = true;
     // Start is called before the first frame update
 
     void Start() {
         instance = this;
-        StartGame();
     }
 
     public void StartGame() {
+        if (IsRunning) return;
+
+        if (!firstRun) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            return;
+        }
+
+        firstRun = false;
+
+        TimeRemaining = 20f;
         StartCoroutine(StartTimer());
         IsRunning = true;
     }
@@ -44,5 +55,6 @@ public class GameTimer : MonoBehaviour
             yield return null;
         }
         IsRunning = false;
+        text.text = "0:00";
     }
 }
