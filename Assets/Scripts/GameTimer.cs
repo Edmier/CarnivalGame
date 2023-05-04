@@ -8,7 +8,7 @@ public class GameTimer : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject timeChangePrefab;
-    public static float TimeRemaining = 90f;
+    public static float TimeRemaining = 60f;
     public static GameTimer instance;
     public static bool IsRunning = false;
 
@@ -29,7 +29,7 @@ public class GameTimer : MonoBehaviour
 
         firstRun = false;
 
-        TimeRemaining = 20f;
+        TimeRemaining = 60f;
         StartCoroutine(StartTimer());
         IsRunning = true;
     }

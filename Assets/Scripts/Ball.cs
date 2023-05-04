@@ -35,7 +35,7 @@ public class Ball : MonoBehaviour
         StartCoroutine(ResetBallTimer());
     }
 
-    private IEnumerator ResetBallTimer(float time = 10f)
+    private IEnumerator ResetBallTimer(float time = 7f)
     {
         yield return new WaitForSeconds(time);
         
